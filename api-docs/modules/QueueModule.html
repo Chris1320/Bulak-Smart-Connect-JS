@@ -229,6 +229,9 @@
                         <li class="list-group-item">
                             <a href="../controllers/QueueController.html">QueueController</a>
                         </li>
+                        <li class="list-group-item">
+                            <a href="../controllers/QueuesController.html">QueuesController</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
@@ -252,10 +255,14 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Module, forwardRef } from &#x27;@nestjs/common&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  Module,
+  //forwardRef, // Uncomment if you need to use forwardRef
+} from &#x27;@nestjs/common&#x27;;
 import { TypeOrmModule } from &#x27;@nestjs/typeorm&#x27;;
 import { QueueService } from &#x27;./queue.service&#x27;;
 import { QueueController } from &#x27;./queue.controller&#x27;;
+import { QueuesController } from &#x27;./queues.controller&#x27;;
 import { QueueGateway } from &#x27;./queue.gateway&#x27;;
 import { Queue } from &#x27;./entities/queue.entity&#x27;;
 import { QueueDetails } from &#x27;./entities/queue-details.entity&#x27;;
@@ -263,7 +270,7 @@ import { Counter } from &#x27;../counter/entities/counter.entity&#x27;;
 
 @Module({
   imports: [TypeOrmModule.forFeature([Queue, QueueDetails, Counter])],
-  controllers: [QueueController],
+  controllers: [QueueController, QueuesController],
   providers: [QueueService, QueueGateway],
   exports: [QueueService, QueueGateway],
 })

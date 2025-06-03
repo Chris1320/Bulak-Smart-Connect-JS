@@ -142,7 +142,6 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Async</span>
                                 <a href="#validate" >validate</a>
                             </li>
                         </ul>
@@ -168,7 +167,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/auth/jwt.strategy.ts:7</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/auth/jwt.strategy.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -217,7 +216,6 @@
                 <td class="col-md-4">
                     <a name="validate"></a>
                     <span class="name">
-                            <span class="modifier">Async</span>
                         <span ><b>validate</b></span>
                         <a href="#validate"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -225,16 +223,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>validate(payload: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+<code>validate(payload: <a href="../interfaces/JwtPayload.html" target="_self">JwtPayload</a>)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="22"
-                                    class="link-to-prism">src/auth/jwt.strategy.ts:22</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="35"
+                                    class="link-to-prism">src/auth/jwt.strategy.ts:35</a></div>
                         </td>
                     </tr>
 
@@ -257,7 +254,7 @@
                                         <tr>
                                                 <td>payload</td>
                                             <td>
-                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                            <code><a href="../interfaces/JwtPayload.html" target="_self" >JwtPayload</a></code>
                                             </td>
 
                                             <td>
@@ -270,7 +267,7 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>    <code>unknown</code>
+                            <b>Returns : </b>        <code><a href="../interfaces/AuthenticatedUser.html" target="_self" >AuthenticatedUser</a></code>
 
                         </div>
                             <div class="io-description">
@@ -291,6 +288,19 @@ import { PassportStrategy } from &#x27;@nestjs/passport&#x27;;
 import { ExtractJwt, Strategy } from &#x27;passport-jwt&#x27;;
 import { ConfigService } from &#x27;@nestjs/config&#x27;;
 
+interface JwtPayload {
+  sub: number;
+  email: string;
+  roles?: string[];
+}
+
+// Strategy for validating JWT tokens in NestJS
+export interface AuthenticatedUser {
+  id: number;
+  email: string;
+  roles: Array&lt;{ name: string }&gt;;
+}
+
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor(private configService: ConfigService) {
@@ -307,11 +317,22 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     });
   }
 
-  async validate(payload: any) {
+  validate(payload: JwtPayload): AuthenticatedUser {
+    // Validation for the payload
+    if (!payload || payload.sub &#x3D;&#x3D;&#x3D; undefined || isNaN(Number(payload.sub))) {
+      throw new UnauthorizedException(&#x27;Invalid token payload&#x27;);
+    }
+
+    const userId &#x3D; Number(payload.sub);
+    const email &#x3D; String(payload.email || &#x27;&#x27;);
+    const roles &#x3D; Array.isArray(payload.roles)
+      ? payload.roles.map(role &#x3D;&gt; ({ name: role }))
+      : [];
+
     return {
-      userId: payload.sub,
-      email: payload.email,
-      roles: payload.roles || [],
+      id: userId,
+      email,
+      roles
     };
   }
 }

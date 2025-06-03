@@ -150,6 +150,12 @@
                             </li>
                             <li>
                                     <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#checkQueueExists" >checkQueueExists</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                 <a href="#create" >create</a>
                             </li>
                             <li>
@@ -178,11 +184,23 @@
                             </li>
                             <li>
                                     <span class="modifier"></span>
+                                <a href="#findPendingWithDetails" >findPendingWithDetails</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
                                 <a href="#findServing" >findServing</a>
                             </li>
                             <li>
                                     <span class="modifier"></span>
+                                <a href="#findServingWithDetails" >findServingWithDetails</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
                                 <a href="#getCounters" >getCounters</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#getDetailsForMultipleQueues" >getDetailsForMultipleQueues</a>
                             </li>
                             <li>
                                     <span class="modifier"></span>
@@ -199,6 +217,11 @@
                             <li>
                                     <span class="modifier"></span>
                                 <a href="#update" >update</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateStatus" >updateStatus</a>
                             </li>
                         </ul>
                     </td>
@@ -246,8 +269,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="85"
-                                    class="link-to-prism">src/modules/queue/queue.controller.ts:85</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="152"
+                                    class="link-to-prism">src/modules/queue/queue.controller.ts:152</a></div>
                         </td>
                     </tr>
 
@@ -322,8 +345,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="80"
-                                    class="link-to-prism">src/modules/queue/queue.controller.ts:80</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="147"
+                                    class="link-to-prism">src/modules/queue/queue.controller.ts:147</a></div>
                         </td>
                     </tr>
 
@@ -373,18 +396,19 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="create"></a>
+                    <a name="checkQueueExists"></a>
                     <span class="name">
                             <span class="modifier"></span>
-                        <span ><b>create</b></span>
-                        <a href="#create"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Async</span>
+                        <span ><b>checkQueueExists</b></span>
+                        <a href="#checkQueueExists"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>create(createQueueDto: <a href="../classes/CreateQueueDto.html" target="_self">CreateQueueDto</a>)</code>
+                    <code>checkQueueExists(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
@@ -392,14 +416,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Post()<br /></code>
+                    <code>@Get(&#x27;:id/exists&#x27;)<br /></code>
                 </td>
             </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="20"
-                                    class="link-to-prism">src/modules/queue/queue.controller.ts:20</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="162"
+                                    class="link-to-prism">src/modules/queue/queue.controller.ts:162</a></div>
                         </td>
                     </tr>
 
@@ -419,6 +443,95 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="create"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                        <span ><b>create</b></span>
+                        <a href="#create"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>create(req: literal type, createQueueDto: <a href="../classes/CreateQueueDto.html" target="_self">CreateQueueDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Post()<br />@UseGuards(JwtAuthGuard)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="24"
+                                    class="link-to-prism">src/modules/queue/queue.controller.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>req</td>
+                                            <td>
+                                                        <code>literal type</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
                                         <tr>
                                                 <td>createQueueDto</td>
                                             <td>
@@ -474,8 +587,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="25"
-                                    class="link-to-prism">src/modules/queue/queue.controller.ts:25</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="45"
+                                    class="link-to-prism">src/modules/queue/queue.controller.ts:45</a></div>
                         </td>
                     </tr>
 
@@ -520,8 +633,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="60"
-                                    class="link-to-prism">src/modules/queue/queue.controller.ts:60</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="127"
+                                    class="link-to-prism">src/modules/queue/queue.controller.ts:127</a></div>
                         </td>
                     </tr>
 
@@ -596,8 +709,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="30"
-                                    class="link-to-prism">src/modules/queue/queue.controller.ts:30</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="50"
+                                    class="link-to-prism">src/modules/queue/queue.controller.ts:50</a></div>
                         </td>
                     </tr>
 
@@ -672,8 +785,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="45"
-                                    class="link-to-prism">src/modules/queue/queue.controller.ts:45</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="65"
+                                    class="link-to-prism">src/modules/queue/queue.controller.ts:65</a></div>
                         </td>
                     </tr>
 
@@ -718,8 +831,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="55"
-                                    class="link-to-prism">src/modules/queue/queue.controller.ts:55</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="122"
+                                    class="link-to-prism">src/modules/queue/queue.controller.ts:122</a></div>
                         </td>
                     </tr>
 
@@ -794,8 +907,54 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="35"
-                                    class="link-to-prism">src/modules/queue/queue.controller.ts:35</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="55"
+                                    class="link-to-prism">src/modules/queue/queue.controller.ts:55</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findPendingWithDetails"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>findPendingWithDetails</b></span>
+                        <a href="#findPendingWithDetails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findPendingWithDetails()</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get(&#x27;pending/details&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="71"
+                                    class="link-to-prism">src/modules/queue/queue.controller.ts:71</a></div>
                         </td>
                     </tr>
 
@@ -840,8 +999,54 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="40"
-                                    class="link-to-prism">src/modules/queue/queue.controller.ts:40</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="60"
+                                    class="link-to-prism">src/modules/queue/queue.controller.ts:60</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findServingWithDetails"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>findServingWithDetails</b></span>
+                        <a href="#findServingWithDetails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findServingWithDetails()</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get(&#x27;serving/details&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="77"
+                                    class="link-to-prism">src/modules/queue/queue.controller.ts:77</a></div>
                         </td>
                     </tr>
 
@@ -886,8 +1091,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="90"
-                                    class="link-to-prism">src/modules/queue/queue.controller.ts:90</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="157"
+                                    class="link-to-prism">src/modules/queue/queue.controller.ts:157</a></div>
                         </td>
                     </tr>
 
@@ -899,6 +1104,82 @@
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                         </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDetailsForMultipleQueues"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>getDetailsForMultipleQueues</b></span>
+                        <a href="#getDetailsForMultipleQueues"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getDetailsForMultipleQueues(body: literal type)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Post(&#x27;bulk-details&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="83"
+                                    class="link-to-prism">src/modules/queue/queue.controller.ts:83</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                        <code>literal type</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -932,8 +1213,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="65"
-                                    class="link-to-prism">src/modules/queue/queue.controller.ts:65</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="132"
+                                    class="link-to-prism">src/modules/queue/queue.controller.ts:132</a></div>
                         </td>
                     </tr>
 
@@ -1008,8 +1289,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="70"
-                                    class="link-to-prism">src/modules/queue/queue.controller.ts:70</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="137"
+                                    class="link-to-prism">src/modules/queue/queue.controller.ts:137</a></div>
                         </td>
                     </tr>
 
@@ -1084,8 +1365,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="50"
-                                    class="link-to-prism">src/modules/queue/queue.controller.ts:50</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="117"
+                                    class="link-to-prism">src/modules/queue/queue.controller.ts:117</a></div>
                         </td>
                     </tr>
 
@@ -1130,8 +1411,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="75"
-                                    class="link-to-prism">src/modules/queue/queue.controller.ts:75</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="142"
+                                    class="link-to-prism">src/modules/queue/queue.controller.ts:142</a></div>
                         </td>
                     </tr>
 
@@ -1189,6 +1470,95 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateStatus"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>updateStatus</b></span>
+                        <a href="#updateStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateStatus(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, body: literal type)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Patch(&#x27;:id/status&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="88"
+                                    class="link-to-prism">src/modules/queue/queue.controller.ts:88</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                        <code>literal type</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>    </div>
 
 
@@ -1200,19 +1570,39 @@
   Body,
   Patch,
   Param,
-  Delete,
+  //Delete, // Uncomment if you want to implement delete functionality
+  Request,
+  UseGuards,
 } from &#x27;@nestjs/common&#x27;;
 import { QueueService } from &#x27;./queue.service&#x27;;
 import { CreateQueueDto } from &#x27;./dto/create-queue.dto&#x27;;
 import { UpdateQueueDto } from &#x27;./dto/update-queue.dto&#x27;;
 import { QueueStatus } from &#x27;./entities/queue.entity&#x27;;
+import { JwtAuthGuard } from &#x27;../../auth/guards/jwt-auth.guard&#x27;;
 
 @Controller(&#x27;queue&#x27;)
 export class QueueController {
   constructor(private readonly queueService: QueueService) {}
 
   @Post()
-  create(@Body() createQueueDto: CreateQueueDto) {
+  @UseGuards(JwtAuthGuard)
+  create(
+    @Request() req: { user?: { id: number } },
+    @Body() createQueueDto: CreateQueueDto,
+  ) {
+    // Extract user ID from JWT token if authenticated
+    const userId &#x3D; req.user?.id || null;
+
+    // Override the userId in the DTO with the authenticated user&#x27;s ID
+    // This prevents users from creating queues for other users
+    if (userId) {
+      createQueueDto.userId &#x3D; userId;
+      createQueueDto.isGuest &#x3D; false;
+    } else {
+      createQueueDto.userId &#x3D; undefined;
+      createQueueDto.isGuest &#x3D; true;
+    }
+
     return this.queueService.create(createQueueDto);
   }
 
@@ -1239,6 +1629,53 @@ export class QueueController {
   @Get(&#x27;completed&#x27;)
   findCompleted() {
     return this.queueService.findByStatus(QueueStatus.COMPLETED);
+  }
+
+  // Endpoint for pending queues with details
+  @Get(&#x27;pending/details&#x27;)
+  findPendingWithDetails() {
+    return this.queueService.findByStatusWithDetails(QueueStatus.PENDING);
+  }
+
+  // Endpoint for serving queues with details
+  @Get(&#x27;serving/details&#x27;)
+  findServingWithDetails() {
+    return this.queueService.findByStatusWithDetails(QueueStatus.SERVING);
+  }
+
+  // Endpoint for bulk fetching queue details
+  @Post(&#x27;bulk-details&#x27;)
+  getDetailsForMultipleQueues(@Body() body: { queueIds: number[] }) {
+    return this.queueService.getDetailsForMultipleQueues(body.queueIds);
+  }
+  // Endpoint for updating queue status
+  @Patch(&#x27;:id/status&#x27;)
+  async updateStatus(
+    @Param(&#x27;id&#x27;) id: string,
+    @Body() body: { status: QueueStatus },
+  ) {
+    console.log(&#x60;PATCH /queue/${id}/status with body:&#x60;, body);
+
+    try {
+      // Validate the status enum value
+      if (!Object.values(QueueStatus).includes(body.status)) {
+        console.error(&#x60;Invalid status value: ${body.status}&#x60;);
+        return {
+          error: &#x27;Invalid status value&#x27;,
+          validValues: Object.values(QueueStatus),
+        };
+      }
+
+      // Update the queue status
+      const result &#x3D; await this.queueService.update(+id, {
+        status: body.status,
+      });
+      console.log(&#x60;Queue ${id} status updated successfully to ${body.status}&#x60;);
+      return result;
+    } catch (error) {
+      console.error(&#x60;Error updating queue ${id} status:&#x60;, error);
+      throw error;
+    }
   }
 
   @Get(&#x27;stats&#x27;)
@@ -1284,6 +1721,17 @@ export class QueueController {
   @Get(&#x27;counters&#x27;)
   getCounters() {
     return this.queueService.getCounters();
+  }
+
+  @Get(&#x27;:id/exists&#x27;)
+  async checkQueueExists(@Param(&#x27;id&#x27;) id: string) {
+    try {
+      const exists &#x3D; await this.queueService.checkExists(+id);
+      return { exists };
+    } catch (error) {
+      console.error(&#x60;Error checking if queue ${id} exists:&#x60;, error);
+      return { exists: false };
+    }
   }
 }
 </code></pre>

@@ -145,6 +145,10 @@
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
+                                <a href="#checkExists" >checkExists</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
                                 <a href="#create" >create</a>
                             </li>
                             <li>
@@ -161,11 +165,19 @@
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
+                                <a href="#findByStatusWithDetails" >findByStatusWithDetails</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
                                 <a href="#findOne" >findOne</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
                                 <a href="#getCounters" >getCounters</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getDetailsForMultipleQueues" >getDetailsForMultipleQueues</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
@@ -201,12 +213,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(queueRepository: <a href="../entitys/Queue.html" target="_self">Repository&lt;Queue&gt;</a>, queueDetailsRepository: Repository<QueueDetails>, counterRepository: <a href="../entitys/Counter.html" target="_self">Repository&lt;Counter&gt;</a>, queueGateway: <a href="../classes/QueueGateway.html" target="_self">QueueGateway</a>)</code>
+<code>constructor(queueRepository: <a href="../entitys/Queue.html" target="_self">Repository&lt;Queue&gt;</a>, queueDetailsRepository: <a href="../interfaces/QueueDetails.html" target="_self">Repository&lt;QueueDetails&gt;</a>, counterRepository: <a href="../entitys/Counter.html" target="_self">Repository&lt;Counter&gt;</a>, queueGateway: <a href="../classes/QueueGateway.html" target="_self">QueueGateway</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/modules/queue/queue.service.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/modules/queue/queue.service.ts:21</a></div>
                             </td>
                         </tr>
 
@@ -239,7 +251,7 @@
                                                         <td>queueDetailsRepository</td>
                                                   
                                                         <td>
-                                                                    <code>Repository&lt;QueueDetails&gt;</code>
+                                                                        <code><a href="../interfaces/QueueDetails.html" target="_self" >Repository&lt;QueueDetails&gt;</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -307,8 +319,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="304"
-                                    class="link-to-prism">src/modules/queue/queue.service.ts:304</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="431"
+                                    class="link-to-prism">src/modules/queue/queue.service.ts:431</a></div>
                         </td>
                     </tr>
 
@@ -376,8 +388,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="187"
-                                    class="link-to-prism">src/modules/queue/queue.service.ts:187</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="314"
+                                    class="link-to-prism">src/modules/queue/queue.service.ts:314</a></div>
                         </td>
                     </tr>
 
@@ -427,6 +439,75 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="checkExists"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>checkExists</b></span>
+                        <a href="#checkExists"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkExists(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="444"
+                                    class="link-to-prism">src/modules/queue/queue.service.ts:444</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="create"></a>
                     <span class="name">
                             <span class="modifier">Async</span>
@@ -445,8 +526,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="29"
-                                    class="link-to-prism">src/modules/queue/queue.service.ts:29</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="33"
+                                    class="link-to-prism">src/modules/queue/queue.service.ts:33</a></div>
                         </td>
                     </tr>
 
@@ -514,8 +595,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="86"
-                                    class="link-to-prism">src/modules/queue/queue.service.ts:86</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="111"
+                                    class="link-to-prism">src/modules/queue/queue.service.ts:111</a></div>
                         </td>
                     </tr>
 
@@ -553,8 +634,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="111"
-                                    class="link-to-prism">src/modules/queue/queue.service.ts:111</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="136"
+                                    class="link-to-prism">src/modules/queue/queue.service.ts:136</a></div>
                         </td>
                     </tr>
 
@@ -622,8 +703,77 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="92"
-                                    class="link-to-prism">src/modules/queue/queue.service.ts:92</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="117"
+                                    class="link-to-prism">src/modules/queue/queue.service.ts:117</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>status</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/enumerations.html#QueueStatus" target="_self" >QueueStatus</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findByStatusWithDetails"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>findByStatusWithDetails</b></span>
+                        <a href="#findByStatusWithDetails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findByStatusWithDetails(status: <a href="../undefineds/QueueStatus.html" target="_self">QueueStatus</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="260"
+                                    class="link-to-prism">src/modules/queue/queue.service.ts:260</a></div>
                         </td>
                     </tr>
 
@@ -691,8 +841,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="99"
-                                    class="link-to-prism">src/modules/queue/queue.service.ts:99</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="124"
+                                    class="link-to-prism">src/modules/queue/queue.service.ts:124</a></div>
                         </td>
                     </tr>
 
@@ -760,8 +910,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="310"
-                                    class="link-to-prism">src/modules/queue/queue.service.ts:310</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="437"
+                                    class="link-to-prism">src/modules/queue/queue.service.ts:437</a></div>
                         </td>
                     </tr>
 
@@ -773,6 +923,75 @@
                             <b>Returns : </b>    <code>unknown</code>
 
                         </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDetailsForMultipleQueues"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getDetailsForMultipleQueues</b></span>
+                        <a href="#getDetailsForMultipleQueues"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getDetailsForMultipleQueues(queueIds: number[])</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="225"
+                                    class="link-to-prism">src/modules/queue/queue.service.ts:225</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>queueIds</td>
+                                            <td>
+                                                        <code>number[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -799,8 +1018,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="123"
-                                    class="link-to-prism">src/modules/queue/queue.service.ts:123</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="148"
+                                    class="link-to-prism">src/modules/queue/queue.service.ts:148</a></div>
                         </td>
                     </tr>
 
@@ -868,8 +1087,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="167"
-                                    class="link-to-prism">src/modules/queue/queue.service.ts:167</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="206"
+                                    class="link-to-prism">src/modules/queue/queue.service.ts:206</a></div>
                         </td>
                     </tr>
 
@@ -937,8 +1156,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="257"
-                                    class="link-to-prism">src/modules/queue/queue.service.ts:257</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="384"
+                                    class="link-to-prism">src/modules/queue/queue.service.ts:384</a></div>
                         </td>
                     </tr>
 
@@ -976,8 +1195,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="140"
-                                    class="link-to-prism">src/modules/queue/queue.service.ts:140</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="164"
+                                    class="link-to-prism">src/modules/queue/queue.service.ts:164</a></div>
                         </td>
                     </tr>
 
@@ -1048,10 +1267,13 @@
   forwardRef,
 } from &#x27;@nestjs/common&#x27;;
 import { InjectRepository } from &#x27;@nestjs/typeorm&#x27;;
-import { Repository, LessThanOrEqual } from &#x27;typeorm&#x27;;
+import { Repository, LessThanOrEqual, In } from &#x27;typeorm&#x27;;
 import { Queue, QueueStatus } from &#x27;./entities/queue.entity&#x27;;
 import { QueueDetails } from &#x27;./entities/queue-details.entity&#x27;;
-import { Counter, CounterStatus } from &#x27;../counter/entities/counter.entity&#x27;;
+import {
+  Counter,
+  //CounterStatus, //Uncomment if you need to use CounterStatus
+} from &#x27;../counter/entities/counter.entity&#x27;;
 import { CreateQueueDto } from &#x27;./dto/create-queue.dto&#x27;;
 import { UpdateQueueDto } from &#x27;./dto/update-queue.dto&#x27;;
 import { QueueGateway } from &#x27;./queue.gateway&#x27;;
@@ -1096,11 +1318,28 @@ export class QueueService {
 
     const savedQueue &#x3D; await this.queueRepository.save(queue);
 
-    // Create queue details
+    // Simplify the user ID handling - trust what the controller provided
+    const userId &#x3D;
+      typeof createQueueDto.userId &#x3D;&#x3D;&#x3D; &#x27;number&#x27;
+        ? createQueueDto.userId
+        : typeof createQueueDto.userId &#x3D;&#x3D;&#x3D; &#x27;string&#x27; &amp;&amp;
+            createQueueDto.userId !&#x3D;&#x3D; &#x27;guest&#x27;
+          ? Number(createQueueDto.userId)
+          : undefined;
+
+    const isGuest &#x3D; createQueueDto.isGuest || !userId;
+
+    // Log for debugging
+    console.log(&#x27;Creating queue details with:&#x27;, {
+      providedUserId: createQueueDto.userId,
+      parsedUserId: userId,
+      isGuest,
+    });
+
+    // Create queue details using the simplified userId
     const queueDetails &#x3D; this.queueDetailsRepository.create({
-      queue: savedQueue,
       queueId: savedQueue.id,
-      userId: createQueueDto.userId,
+      userId: userId, // Use the simplified userId
       firstName: createQueueDto.firstName,
       lastName: createQueueDto.lastName,
       middleInitial: createQueueDto.middleInitial,
@@ -1108,7 +1347,11 @@ export class QueueService {
       phoneNumber: createQueueDto.phoneNumber,
       reasonOfVisit: createQueueDto.reasonOfVisit,
       appointmentType: createQueueDto.appointmentType,
+      isGuest: isGuest,
     });
+
+    // Set the queue relation
+    queueDetails.queue &#x3D; savedQueue;
 
     await this.queueDetailsRepository.save(queueDetails);
 
@@ -1179,32 +1422,46 @@ export class QueueService {
 
     return { queue, details, position };
   }
-
   async update(id: number, updateQueueDto: UpdateQueueDto) {
-    const queue &#x3D; await this.findOne(id);
+    console.log(&#x60;Updating queue ${id} with:&#x60;, updateQueueDto);
 
-    if (updateQueueDto.status) {
-      queue.status &#x3D; updateQueueDto.status;
+    try {
+      // Find the queue
+      const queue &#x3D; await this.findOne(id);
+      console.log(&#x27;Found queue:&#x27;, queue);
 
-      // If completed, set completion time
-      if (updateQueueDto.status &#x3D;&#x3D;&#x3D; QueueStatus.COMPLETED) {
-        queue.completedAt &#x3D; new Date();
+      if (updateQueueDto.status) {
+        // Log the status change
+        console.log(
+          &#x60;Changing status from ${queue.status} to ${updateQueueDto.status}&#x60;,
+        );
+        queue.status &#x3D; updateQueueDto.status;
+
+        // If completed, set completion time
+        if (updateQueueDto.status &#x3D;&#x3D;&#x3D; QueueStatus.COMPLETED) {
+          queue.completedAt &#x3D; new Date();
+        }
       }
+
+      if (updateQueueDto.counterNumber) {
+        queue.counterNumber &#x3D; updateQueueDto.counterNumber;
+      }
+
+      // Save the updated queue
+      const updatedQueue &#x3D; await this.queueRepository.save(queue);
+      console.log(&#x27;Queue updated successfully:&#x27;, updatedQueue);
+
+      // Notify clients about the queue update
+      this.queueGateway.notifyQueueUpdate(id, {
+        action: &#x27;updated&#x27;,
+        queue: updatedQueue,
+      });
+
+      return updatedQueue;
+    } catch (error) {
+      console.error(&#x60;Error updating queue ${id}:&#x60;, error);
+      throw error;
     }
-
-    if (updateQueueDto.counterNumber) {
-      queue.counterNumber &#x3D; updateQueueDto.counterNumber;
-    }
-
-    const updatedQueue &#x3D; await this.queueRepository.save(queue);
-
-    // Notify clients about the queue update
-    this.queueGateway.notifyQueueUpdate(id, {
-      action: &#x27;updated&#x27;,
-      queue: updatedQueue,
-    });
-
-    return updatedQueue;
   }
 
   async getQueuePosition(queueId: number) {
@@ -1225,6 +1482,94 @@ export class QueueService {
     });
 
     return position;
+  }
+  async getDetailsForMultipleQueues(queueIds: number[]) {
+    console.log(&#x27;Getting details for queue IDs:&#x27;, queueIds);
+
+    if (!queueIds || queueIds.length &#x3D;&#x3D;&#x3D; 0) {
+      return {};
+    }
+
+    const detailsMap &#x3D; {};
+
+    try {
+      // Fetch all queue details in a single query for better performance
+      const allDetails &#x3D; await this.queueDetailsRepository.find({
+        where: {
+          queueId: In(queueIds),
+        },
+        relations: [&#x27;user&#x27;],
+      });
+
+      console.log(
+        &#x60;Found ${allDetails.length} details for ${queueIds.length} queues&#x60;,
+      );
+
+      // Organize by queueId for easy lookup
+      allDetails.forEach((detail) &#x3D;&gt; {
+        detailsMap[detail.queueId] &#x3D; detail;
+      });
+
+      return detailsMap;
+    } catch (error: unknown) {
+      console.error(&#x27;Error fetching details for multiple queues:&#x27;, error);
+      // Return empty details rather than failing
+      return {};
+    }
+  }
+
+  async findByStatusWithDetails(status: QueueStatus) {
+    console.log(&#x60;Finding queues with status: ${status} and their details&#x60;);
+
+    try {
+      // First get all queues with this status
+      const queues &#x3D; await this.queueRepository.find({
+        where: { status },
+        order: { createdAt: &#x27;ASC&#x27; },
+      });
+
+      console.log(&#x60;Found ${queues.length} queues with status ${status}&#x60;);
+
+      if (queues.length &#x3D;&#x3D;&#x3D; 0) {
+        return [];
+      }
+
+      // Get all queue IDs
+      const queueIds &#x3D; queues.map((queue) &#x3D;&gt; queue.id);
+
+      // Fetch details for all these queues
+      const detailsMap &#x3D; await this.getDetailsForMultipleQueues(queueIds);
+
+      // Combine queue and details data
+      const result &#x3D; queues.map((queue) &#x3D;&gt; {
+        return {
+          ...queue,
+          details: detailsMap[queue.id] || null,
+        };
+      });
+
+      console.log(&#x60;Returning ${result.length} queues with details&#x60;);
+      return result;
+    } catch (error: unknown) {
+      // Handle error message extraction without triggering ESLint
+      let errorMessage: string;
+
+      if (error instanceof Error) {
+        errorMessage &#x3D; error.message;
+      } else {
+        errorMessage &#x3D; String(error);
+      }
+
+      console.error(&#x27;Error in findByStatusWithDetails:&#x27;, errorMessage);
+
+      if (error instanceof Error) {
+        throw new Error(&#x60;Failed to get queue details: ${error.message}&#x60;);
+      }
+      if (typeof error &#x3D;&#x3D;&#x3D; &#x27;string&#x27;) {
+        throw new Error(&#x60;Failed to get queue details: ${error}&#x60;);
+      }
+      throw new Error(&#x27;Failed to get queue details: An unknown error occurred&#x27;);
+    }
   }
 
   async callNext(counterId: number) {
@@ -1354,6 +1699,14 @@ export class QueueService {
     return await this.counterRepository.find({
       relations: [&#x27;currentQueue&#x27;],
     });
+  }
+
+  // Check if queue exists
+  async checkExists(id: number): Promise&lt;boolean&gt; {
+    const queue &#x3D; await this.queueRepository.findOne({
+      where: { id },
+    });
+    return !!queue;
   }
 }
 </code></pre>
