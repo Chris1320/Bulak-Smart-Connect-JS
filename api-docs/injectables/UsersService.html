@@ -79,7 +79,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content class">
+               <div class="content injectable">
                    <div class="content-data">
 
 
@@ -89,13 +89,9 @@
 
 
 
-
-
-
-
 <ol class="breadcrumb">
-  <li class="breadcrumb-item">Classes</li>
-  <li class="breadcrumb-item" >QueueGateway</li>
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >UsersService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -119,45 +115,17 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/modules/queue/queue.gateway.ts</code>
+            <code>src/users/users.service.ts</code>
         </p>
 
 
 
-
-            <p class="comment">
-                <h3>Implements</h3>
-            </p>
-            <p class="comment">
-                        <code>OnGatewayConnection</code>
-                        <code>OnGatewayDisconnect</code>
-            </p>
 
 
             <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Properties</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                    <span class="modifier">Private</span>
-                                    <span class="modifier">Readonly</span>
-                                <a href="#logger" >logger</a>
-                            </li>
-                            <li>
-                                    <span class="modifier"></span>
-                                <a href="#server" >server</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -168,36 +136,40 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#handleConnection" >handleConnection</a>
-                            </li>
-                            <li>
-                                <a href="#handleDisconnect" >handleDisconnect</a>
-                            </li>
-                            <li>
-                                    <span class="modifier"></span>
                                     <span class="modifier">Async</span>
-                                <a href="#handleGetQueuePosition" >handleGetQueuePosition</a>
+                                <a href="#adminUpdate" >adminUpdate</a>
                             </li>
                             <li>
-                                    <span class="modifier"></span>
                                     <span class="modifier">Async</span>
-                                <a href="#handleJoinCounter" >handleJoinCounter</a>
+                                <a href="#create" >create</a>
                             </li>
                             <li>
-                                    <span class="modifier"></span>
                                     <span class="modifier">Async</span>
-                                <a href="#handleJoinQueue" >handleJoinQueue</a>
+                                <a href="#findAll" >findAll</a>
                             </li>
                             <li>
-                                    <span class="modifier"></span>
                                     <span class="modifier">Async</span>
-                                <a href="#handleJoinQueueUpdates" >handleJoinQueueUpdates</a>
+                                <a href="#findByEmail" >findByEmail</a>
                             </li>
                             <li>
-                                <a href="#notifyCounterUpdate" >notifyCounterUpdate</a>
+                                    <span class="modifier">Async</span>
+                                <a href="#findByUsername" >findByUsername</a>
                             </li>
                             <li>
-                                <a href="#notifyQueueUpdate" >notifyQueueUpdate</a>
+                                    <span class="modifier">Async</span>
+                                <a href="#findOne" >findOne</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getStats" >getStats</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#remove" >remove</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateStatus" >updateStatus</a>
                             </li>
                         </ul>
                     </td>
@@ -217,12 +189,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(queueService: <a href="../injectables/QueueService.html" target="_self">QueueService</a>)</code>
+<code>constructor(usersRepository: <a href="../entitys/User.html" target="_self">Repository&lt;User&gt;</a>, rolesService: <a href="../injectables/RolesService.html" target="_self">RolesService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/modules/queue/queue.gateway.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/users/users.service.ts:31</a></div>
                             </td>
                         </tr>
 
@@ -240,10 +212,22 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>queueService</td>
+                                                        <td>usersRepository</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/QueueService.html" target="_self" >QueueService</a></code>
+                                                                        <code><a href="../entitys/User.html" target="_self" >Repository&lt;User&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>rolesService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/RolesService.html" target="_self" >RolesService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -260,76 +244,6 @@
         </table>
 </section>
 
-            <section data-compodoc="block-properties">
-    
-    <h3 id="inputs">
-        Properties
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="logger"></a>
-                    <span class="name">
-                            <span class="modifier">Private</span>
-                            <span class="modifier">Readonly</span>
-                        <span ><b>logger</b></span>
-                        <a href="#logger"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>new Logger(QueueGateway.name)</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/modules/queue/queue.gateway.ts:22</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="server"></a>
-                    <span class="name">
-                            <span class="modifier"></span>
-                        <span ><b>server</b></span>
-                        <a href="#server"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>    <code>Server</code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <b>Decorators : </b>
-                        <br />
-                        <code>
-                            @WebSocketServer()<br />
-                        </code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/modules/queue/queue.gateway.ts:25</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-</section>
-
             <section data-compodoc="block-methods">
     
     <h3 id="methods">
@@ -339,168 +253,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="handleConnection"></a>
+                    <a name="adminUpdate"></a>
                     <span class="name">
-                        <span ><b>handleConnection</b></span>
-                        <a href="#handleConnection"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>handleConnection(client: Socket)</code>
-                </td>
-            </tr>
-
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="32"
-                                    class="link-to-prism">src/modules/queue/queue.gateway.ts:32</a></div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                            <div class="io-description">
-                                <b>Parameters :</b>
-                                
-                                <table class="params">
-                                    <thead>
-                                        <tr>
-                                            <td>Name</td>
-                                                <td>Type</td>
-                                            <td>Optional</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                                <td>client</td>
-                                            <td>
-                                                        <code>Socket</code>
-                                            </td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                        </div>
-                            <div class="io-description">
-                                
-                            </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="handleDisconnect"></a>
-                    <span class="name">
-                        <span ><b>handleDisconnect</b></span>
-                        <a href="#handleDisconnect"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>handleDisconnect(client: Socket)</code>
-                </td>
-            </tr>
-
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="36"
-                                    class="link-to-prism">src/modules/queue/queue.gateway.ts:36</a></div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                            <div class="io-description">
-                                <b>Parameters :</b>
-                                
-                                <table class="params">
-                                    <thead>
-                                        <tr>
-                                            <td>Name</td>
-                                                <td>Type</td>
-                                            <td>Optional</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                                <td>client</td>
-                                            <td>
-                                                        <code>Socket</code>
-                                            </td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                        </div>
-                            <div class="io-description">
-                                
-                            </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="handleGetQueuePosition"></a>
-                    <span class="name">
-                            <span class="modifier"></span>
                             <span class="modifier">Async</span>
-                        <span ><b>handleGetQueuePosition</b></span>
-                        <a href="#handleGetQueuePosition"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>adminUpdate</b></span>
+                        <a href="#adminUpdate"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>handleGetQueuePosition(client: Socket, queueId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    <code>adminUpdate(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, updateUserDto: <a href="../classes/AdminUpdateUserDto.html" target="_self">AdminUpdateUserDto</a>)</code>
                 </td>
             </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@SubscribeMessage(&#x27;getQueuePosition&#x27;)<br /></code>
-                </td>
-            </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="48"
-                                    class="link-to-prism">src/modules/queue/queue.gateway.ts:48</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="106"
+                                    class="link-to-prism">src/users/users.service.ts:106</a></div>
                         </td>
                     </tr>
 
@@ -521,9 +293,9 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>client</td>
+                                                <td>id</td>
                                             <td>
-                                                        <code>Socket</code>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                             </td>
 
                                             <td>
@@ -533,9 +305,78 @@
 
                                         </tr>
                                         <tr>
-                                                <td>queueId</td>
+                                                <td>updateUserDto</td>
                                             <td>
-                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                            <code><a href="../classes/AdminUpdateUserDto.html" target="_self" >AdminUpdateUserDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="create"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>create</b></span>
+                        <a href="#create"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>create(createUserDto: <a href="../classes/CreateUserDto.html" target="_self">CreateUserDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="266"
+                                    class="link-to-prism">src/users/users.service.ts:266</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>createUserDto</td>
+                                            <td>
+                                                            <code><a href="../classes/CreateUserDto.html" target="_self" >CreateUserDto</a></code>
                                             </td>
 
                                             <td>
@@ -562,34 +403,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="handleJoinCounter"></a>
+                    <a name="findAll"></a>
                     <span class="name">
-                            <span class="modifier"></span>
                             <span class="modifier">Async</span>
-                        <span ><b>handleJoinCounter</b></span>
-                        <a href="#handleJoinCounter"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>findAll</b></span>
+                        <a href="#findAll"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>handleJoinCounter(client: Socket, counterId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    <code>findAll(options: <a href="../interfaces/FindAllOptions.html" target="_self">FindAllOptions</a>)</code>
                 </td>
             </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@SubscribeMessage(&#x27;joinCounter&#x27;)<br /></code>
-                </td>
-            </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="54"
-                                    class="link-to-prism">src/modules/queue/queue.gateway.ts:54</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="38"
+                                    class="link-to-prism">src/users/users.service.ts:38</a></div>
                         </td>
                     </tr>
 
@@ -610,21 +443,9 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>client</td>
+                                                <td>options</td>
                                             <td>
-                                                        <code>Socket</code>
-                                            </td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-
-                                        </tr>
-                                        <tr>
-                                                <td>counterId</td>
-                                            <td>
-                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                            <code><a href="../interfaces/FindAllOptions.html" target="_self" >FindAllOptions</a></code>
                                             </td>
 
                                             <td>
@@ -651,34 +472,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="handleJoinQueue"></a>
+                    <a name="findByEmail"></a>
                     <span class="name">
-                            <span class="modifier"></span>
                             <span class="modifier">Async</span>
-                        <span ><b>handleJoinQueue</b></span>
-                        <a href="#handleJoinQueue"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>findByEmail</b></span>
+                        <a href="#findByEmail"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>handleJoinQueue(client: Socket, queueId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    <code>findByEmail(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@SubscribeMessage(&#x27;joinQueue&#x27;)<br /></code>
-                </td>
-            </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="41"
-                                    class="link-to-prism">src/modules/queue/queue.gateway.ts:41</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="252"
+                                    class="link-to-prism">src/users/users.service.ts:252</a></div>
                         </td>
                     </tr>
 
@@ -699,21 +512,9 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>client</td>
+                                                <td>email</td>
                                             <td>
-                                                        <code>Socket</code>
-                                            </td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-
-                                        </tr>
-                                        <tr>
-                                                <td>queueId</td>
-                                            <td>
-                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                             </td>
 
                                             <td>
@@ -726,7 +527,7 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>    <code>unknown</code>
+                            <b>Returns : </b>        <code><a href="../entitys/User.html" target="_self" >Promise&lt;User | null&gt;</a></code>
 
                         </div>
                             <div class="io-description">
@@ -740,34 +541,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="handleJoinQueueUpdates"></a>
+                    <a name="findByUsername"></a>
                     <span class="name">
-                            <span class="modifier"></span>
                             <span class="modifier">Async</span>
-                        <span ><b>handleJoinQueueUpdates</b></span>
-                        <a href="#handleJoinQueueUpdates"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>findByUsername</b></span>
+                        <a href="#findByUsername"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>handleJoinQueueUpdates(client: Socket)</code>
+                    <code>findByUsername(username: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@SubscribeMessage(&#x27;join_queue_updates&#x27;)<br /></code>
-                </td>
-            </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="60"
-                                    class="link-to-prism">src/modules/queue/queue.gateway.ts:60</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="259"
+                                    class="link-to-prism">src/users/users.service.ts:259</a></div>
                         </td>
                     </tr>
 
@@ -788,9 +581,9 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>client</td>
+                                                <td>username</td>
                                             <td>
-                                                        <code>Socket</code>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                             </td>
 
                                             <td>
@@ -803,7 +596,7 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>    <code>unknown</code>
+                            <b>Returns : </b>        <code><a href="../entitys/User.html" target="_self" >Promise&lt;User | null&gt;</a></code>
 
                         </div>
                             <div class="io-description">
@@ -817,24 +610,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="notifyCounterUpdate"></a>
+                    <a name="findOne"></a>
                     <span class="name">
-                        <span ><b>notifyCounterUpdate</b></span>
-                        <a href="#notifyCounterUpdate"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Async</span>
+                        <span ><b>findOne</b></span>
+                        <a href="#findOne"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>notifyCounterUpdate(counterId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findOne(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="72"
-                                    class="link-to-prism">src/modules/queue/queue.gateway.ts:72</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="86"
+                                    class="link-to-prism">src/users/users.service.ts:86</a></div>
                         </td>
                     </tr>
 
@@ -855,21 +650,9 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>counterId</td>
+                                                <td>id</td>
                                             <td>
                                                             <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                            </td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-
-                                        </tr>
-                                        <tr>
-                                                <td>data</td>
-                                            <td>
-                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
                                             </td>
 
                                             <td>
@@ -882,7 +665,7 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                            <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
 
                         </div>
                             <div class="io-description">
@@ -896,24 +679,65 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="notifyQueueUpdate"></a>
+                    <a name="getStats"></a>
                     <span class="name">
-                        <span ><b>notifyQueueUpdate</b></span>
-                        <a href="#notifyQueueUpdate"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Async</span>
+                        <span ><b>getStats</b></span>
+                        <a href="#getStats"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>notifyQueueUpdate(queueId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getStats()</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="67"
-                                    class="link-to-prism">src/modules/queue/queue.gateway.ts:67</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="210"
+                                    class="link-to-prism">src/users/users.service.ts:210</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/UserStats.html" target="_self" >Promise&lt;UserStats&gt;</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="remove"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>remove</b></span>
+                        <a href="#remove"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>remove(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="190"
+                                    class="link-to-prism">src/users/users.service.ts:190</a></div>
                         </td>
                     </tr>
 
@@ -934,21 +758,9 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>queueId</td>
+                                                <td>id</td>
                                             <td>
                                                             <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                            </td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-
-                                        </tr>
-                                        <tr>
-                                                <td>data</td>
-                                            <td>
-                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
                                             </td>
 
                                             <td>
@@ -961,7 +773,88 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                            <b>Returns : </b>    <code>Promise&lt;literal type&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateStatus"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateStatus</b></span>
+                        <a href="#updateStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateStatus(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, isActive: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="200"
+                                    class="link-to-prism">src/users/users.service.ts:200</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>isActive</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
 
                         </div>
                             <div class="io-description">
@@ -973,93 +866,346 @@
     </table>
 </section>
 
-
-
-
-
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
-  WebSocketGateway,
-  WebSocketServer,
-  SubscribeMessage,
-  OnGatewayConnection,
-  OnGatewayDisconnect,
-} from &#x27;@nestjs/websockets&#x27;;
-import { Server, Socket } from &#x27;socket.io&#x27;;
-import { QueueService } from &#x27;./queue.service&#x27;;
-import { Logger, Inject, forwardRef } from &#x27;@nestjs/common&#x27;;
+  Injectable,
+  NotFoundException,
+  BadRequestException,
+  ConflictException,
+} from &#x27;@nestjs/common&#x27;;
+import { InjectRepository } from &#x27;@nestjs/typeorm&#x27;;
+import { Repository, Like, In } from &#x27;typeorm&#x27;;
+import { User } from &#x27;./entities/user.entity&#x27;;
+import { AdminUpdateUserDto } from &#x27;../auth/dto/update-user.dto&#x27;; // Import from auth module
+import { RolesService } from &#x27;../roles/roles.service&#x27;;
+import { CreateUserDto } from &#x27;./dto/create-user.dto&#x27;; 
+import * as bcrypt from &#x27;bcrypt&#x27;;
 
-@WebSocketGateway({
-  cors: {
-    origin: &#x27;http://localhost:5173&#x27;, // Match your app&#x27;s CORS setting
-    methods: [&#x27;GET&#x27;, &#x27;POST&#x27;],
-    credentials: true,
-    allowedHeaders: [&#x27;Content-Type&#x27;, &#x27;Authorization&#x27;]
-  },
-  namespace: &#x27;socket.io&#x27;, // Add this to match client expectation
-})
-export class QueueGateway implements OnGatewayConnection, OnGatewayDisconnect {
-  private readonly logger &#x3D; new Logger(QueueGateway.name);
+interface FindAllOptions {
+  page: number;
+  limit: number;
+  search?: string;
+  role?: string;
+}
 
-  @WebSocketServer()
-  server: Server;
+export interface UserStats {
+  totalUsers: number;
+  activeUsers: number;
+  inactiveUsers: number;
+  usersByRole: { roleName: string; count: number }[];
+  recentUsers: Omit&lt;User, &#x27;password&#x27;&gt;[];
+}
 
+@Injectable()
+export class UsersService {
   constructor(
-    @Inject(forwardRef(() &#x3D;&gt; QueueService))
-    private readonly queueService: QueueService,
+    @InjectRepository(User)
+    private usersRepository: Repository&lt;User&gt;,
+    private rolesService: RolesService,
   ) {}
 
-  handleConnection(client: Socket) {
-    this.logger.log(&#x60;Client connected: ${client.id}&#x60;);
+  async findAll(options: FindAllOptions) {
+    const { page, limit, search, role } &#x3D; options;
+    const skip &#x3D; (page - 1) * limit;
+
+    const queryBuilder &#x3D; this.usersRepository
+      .createQueryBuilder(&#x27;user&#x27;)
+      .leftJoinAndSelect(&#x27;user.defaultRole&#x27;, &#x27;defaultRole&#x27;)
+      .leftJoinAndSelect(&#x27;user.roles&#x27;, &#x27;roles&#x27;);
+
+    // Apply search filter
+    if (search) {
+      queryBuilder.where(
+        &#x27;(user.firstName LIKE :search OR user.lastName LIKE :search OR user.email LIKE :search OR user.username LIKE :search)&#x27;,
+        { search: &#x60;%${search}%&#x60; },
+      );
+    }
+
+    // Apply role filter
+    if (role) {
+      queryBuilder.andWhere(&#x27;roles.name &#x3D; :role&#x27;, { role });
+    }
+
+    queryBuilder
+      .orderBy(&#x27;user.createdAt&#x27;, &#x27;DESC&#x27;)
+      .skip(skip)
+      .take(limit);
+
+    const [users, total] &#x3D; await queryBuilder.getManyAndCount();
+
+    // Remove passwords from response
+    const sanitizedUsers &#x3D; users.map(user &#x3D;&gt; {
+      const { password, ...userWithoutPassword } &#x3D; user;
+      return {
+        ...userWithoutPassword,
+        roles: user.roles.map(role &#x3D;&gt; role.name),
+        defaultRole: user.defaultRole?.name || &#x27;citizen&#x27;,
+      };
+    });
+
+    return {
+      users: sanitizedUsers,
+      total,
+      page,
+      limit,
+      totalPages: Math.ceil(total / limit),
+    };
   }
 
-  handleDisconnect(client: Socket) {
-    this.logger.log(&#x60;Client disconnected: ${client.id}&#x60;);
+  async findOne(id: number): Promise&lt;any&gt; {
+    const user &#x3D; await this.usersRepository.findOne({
+      where: { id },
+      relations: [&#x27;defaultRole&#x27;, &#x27;roles&#x27;],
+    });
+
+    if (!user) {
+      throw new NotFoundException(&#x60;User with ID ${id} not found&#x60;);
+    }
+
+    // Remove password and format response
+    const { password, ...userWithoutPassword } &#x3D; user;
+    return {
+      ...userWithoutPassword,
+      roles: user.roles.map(role &#x3D;&gt; role.name),
+      defaultRole: user.defaultRole?.name || &#x27;citizen&#x27;,
+    };
   }
 
-  @SubscribeMessage(&#x27;joinQueue&#x27;)
-  async handleJoinQueue(client: Socket, queueId: number) {
-    await client.join(&#x60;queue_${queueId}&#x60;);
-    const queueData &#x3D; await this.queueService.getQueueDetails(queueId);
-    return queueData;
+  // Admin-only update method
+  async adminUpdate(id: number, updateUserDto: AdminUpdateUserDto): Promise&lt;any&gt; {
+    const user &#x3D; await this.usersRepository.findOne({ 
+      where: { id },
+      relations: [&#x27;roles&#x27;]
+    });
+    if (!user) {
+      throw new NotFoundException(&#x60;User with ID ${id} not found&#x60;);
+    }
+
+    const {
+      email,
+      username,
+      firstName,
+      middleName,
+      lastName,
+      nameExtension,
+      contactNumber,
+      roleIds,
+      defaultRoleId,
+    } &#x3D; updateUserDto;
+
+    // Check email uniqueness if being updated
+    if (email &amp;&amp; email !&#x3D;&#x3D; user.email) {
+      const existingUser &#x3D; await this.usersRepository.findOne({
+        where: { email },
+      });
+      if (existingUser) {
+        throw new ConflictException(&#x27;Email already exists&#x27;);
+      }
+    }
+
+    // Check username uniqueness if being updated
+    if (username &amp;&amp; username !&#x3D;&#x3D; user.username) {
+      const existingUser &#x3D; await this.usersRepository.findOne({
+        where: { username },
+      });
+      if (existingUser) {
+        throw new ConflictException(&#x27;Username already exists&#x27;);
+      }
+    }
+
+    // Update fields
+    const updateData: any &#x3D; {};
+
+    if (email) updateData.email &#x3D; email;
+    if (username) updateData.username &#x3D; username;
+    if (firstName) updateData.firstName &#x3D; firstName;
+    if (lastName) updateData.lastName &#x3D; lastName;
+    if (contactNumber) updateData.contactNumber &#x3D; contactNumber;
+    
+    // Handle optional fields
+    if (middleName !&#x3D;&#x3D; undefined) updateData.middleName &#x3D; middleName;
+    if (nameExtension !&#x3D;&#x3D; undefined) updateData.nameExtension &#x3D; nameExtension;
+    if (defaultRoleId !&#x3D;&#x3D; undefined) updateData.defaultRoleId &#x3D; defaultRoleId;
+
+    // Update name if name components changed
+    if (firstName || middleName !&#x3D;&#x3D; undefined || lastName || nameExtension !&#x3D;&#x3D; undefined) {
+      const newFirstName &#x3D; firstName || user.firstName;
+      const newMiddleName &#x3D; middleName !&#x3D;&#x3D; undefined ? middleName : user.middleName;
+      const newLastName &#x3D; lastName || user.lastName;
+      const newNameExtension &#x3D; nameExtension !&#x3D;&#x3D; undefined ? nameExtension : user.nameExtension;
+      
+      updateData.name &#x3D; &#x60;${newFirstName} ${newMiddleName ? newMiddleName + &#x27; &#x27; : &#x27;&#x27;}${newLastName}${newNameExtension ? &#x27; &#x27; + newNameExtension : &#x27;&#x27;}&#x60;;
+    }
+
+    await this.usersRepository.update(id, updateData);
+
+    // Update roles if provided
+    if (roleIds !&#x3D;&#x3D; undefined) {
+      // Remove existing roles and assign new ones
+      await this.usersRepository
+        .createQueryBuilder()
+        .relation(User, &#x27;roles&#x27;)
+        .of(id)
+        .remove(user.roles);
+
+      if (roleIds.length &gt; 0) {
+        await this.rolesService.assignRolesToUser(id, roleIds);
+      }
+    }
+
+    return this.findOne(id);
   }
 
-  @SubscribeMessage(&#x27;getQueuePosition&#x27;)
-  async handleGetQueuePosition(client: Socket, queueId: number) {
-    const position &#x3D; await this.queueService.getQueuePosition(queueId);
-    return { position };
+  async remove(id: number): Promise&lt;{ message: string }&gt; {
+    const user &#x3D; await this.usersRepository.findOne({ where: { id } });
+    if (!user) {
+      throw new NotFoundException(&#x60;User with ID ${id} not found&#x60;);
+    }
+
+    await this.usersRepository.delete(id);
+    return { message: &#x60;User with ID ${id} has been deleted&#x60; };
   }
 
-  @SubscribeMessage(&#x27;joinCounter&#x27;)
-  async handleJoinCounter(client: Socket, counterId: number) {
-    await client.join(&#x60;counter_${counterId}&#x60;);
-    return { success: true };
+  async updateStatus(id: number, isActive: boolean): Promise&lt;any&gt; {
+    const user &#x3D; await this.usersRepository.findOne({ where: { id } });
+    if (!user) {
+      throw new NotFoundException(&#x60;User with ID ${id} not found&#x60;);
+    }
+
+    await this.usersRepository.update(id, { isActive });
+    return this.findOne(id);
   }
 
-  @SubscribeMessage(&#x27;join_queue_updates&#x27;)
-  async handleJoinQueueUpdates(client: Socket) {
-    this.logger.log(&#x60;Socket ${client.id} joined queue updates&#x60;);
-    await client.join(&#x27;queue_updates&#x27;);
-    return { event: &#x27;joined&#x27;, data: &#x27;Successfully joined queue updates&#x27; };
+  async getStats(): Promise&lt;UserStats&gt; {
+    const totalUsers &#x3D; await this.usersRepository.count();
+    const activeUsers &#x3D; await this.usersRepository.count({
+      where: { isActive: true },
+    });
+    const inactiveUsers &#x3D; totalUsers - activeUsers;
+
+    // Get user count by role
+    const roleStats &#x3D; await this.usersRepository
+      .createQueryBuilder(&#x27;user&#x27;)
+      .leftJoin(&#x27;user.roles&#x27;, &#x27;role&#x27;)
+      .select(&#x27;role.name&#x27;, &#x27;roleName&#x27;)
+      .addSelect(&#x27;COUNT(user.id)&#x27;, &#x27;count&#x27;)
+      .groupBy(&#x27;role.name&#x27;)
+      .getRawMany();
+
+    const usersByRole &#x3D; roleStats.map(stat &#x3D;&gt; ({
+      roleName: stat.roleName || &#x27;No Role&#x27;,
+      count: parseInt(stat.count),
+    }));
+
+    // Get recent users (last 10)
+    const recentUsers &#x3D; await this.usersRepository.find({
+      order: { createdAt: &#x27;DESC&#x27; },
+      take: 10,
+      relations: [&#x27;defaultRole&#x27;, &#x27;roles&#x27;],
+    });
+
+    const sanitizedRecentUsers &#x3D; recentUsers.map(user &#x3D;&gt; {
+      const { password, ...userWithoutPassword } &#x3D; user;
+      return userWithoutPassword as Omit&lt;User, &#x27;password&#x27;&gt;;
+    });
+
+    return {
+      totalUsers,
+      activeUsers,
+      inactiveUsers,
+      usersByRole,
+      recentUsers: sanitizedRecentUsers,
+    };
   }
 
-  // Send updates to all clients or specific rooms
-  notifyQueueUpdate(queueId: number, data: any) {
-    void this.server.to(&#x60;queue_${queueId}&#x60;).emit(&#x27;queueUpdate&#x27;, data);
-    void this.server.emit(&#x27;queueListUpdate&#x27;); // Global queue update
+  async findByEmail(email: string): Promise&lt;User | null&gt; {
+    return this.usersRepository.findOne({
+      where: { email },
+      relations: [&#x27;defaultRole&#x27;, &#x27;roles&#x27;],
+    });
   }
 
-  notifyCounterUpdate(counterId: number, data: any) {
-    void this.server.to(&#x60;counter_${counterId}&#x60;).emit(&#x27;counterUpdate&#x27;, data);
-    void this.server.emit(&#x27;counterListUpdate&#x27;); // Global counter update
+  async findByUsername(username: string): Promise&lt;User | null&gt; {
+    return this.usersRepository.findOne({
+      where: { username },
+      relations: [&#x27;defaultRole&#x27;, &#x27;roles&#x27;],
+    });
   }
-}
-</code></pre>
+
+  async create(createUserDto: CreateUserDto) {
+    const {
+      email,
+      username,
+      password,
+      firstName,
+      middleName,
+      lastName,
+      nameExtension,
+      contactNumber,
+      name,
+      roleIds,
+      defaultRoleId
+    } &#x3D; createUserDto;
+
+    // Generate full name if not provided
+    const fullName &#x3D; name || &#x60;${firstName} ${middleName ? middleName + &#x27; &#x27; : &#x27;&#x27;}${lastName}${nameExtension ? &#x27; &#x27; + nameExtension : &#x27;&#x27;}&#x60;;
+
+    // Check if user already exists
+    const existingUserByEmail &#x3D; await this.usersRepository.findOne({
+      where: { email },
+    });
+    if (existingUserByEmail) {
+      throw new ConflictException(&#x27;Email already exists&#x27;);
+    }
+
+    if (username) {
+      const existingUserByUsername &#x3D; await this.usersRepository.findOne({
+        where: { username },
+      });
+      if (existingUserByUsername) {
+        throw new ConflictException(&#x27;Username already exists&#x27;);
+      }
+    }
+
+    try {
+      // Create user
+      const user &#x3D; this.usersRepository.create({
+        email,
+        username,
+        password, // Should be hashed by the caller
+        firstName,
+        middleName,
+        lastName,
+        nameExtension,
+        contactNumber,
+        name: fullName,
+        defaultRoleId: defaultRoleId || 4, // Default to citizen
+      });
+
+      await this.usersRepository.save(user);
+
+      // Assign roles if provided
+      if (roleIds &amp;&amp; roleIds.length &gt; 0) {
+        await this.rolesService.assignRolesToUser(user.id, roleIds);
+      }
+
+      return user;
+    } catch (error) {
+      console.error(&#x27;Error creating user:&#x27;, error);
+      throw error;
+    }
+  }
+}</code></pre>
     </div>
+
 </div>
+
+
+
+
 
 
 
@@ -1094,8 +1240,8 @@ export class QueueGateway implements OnGatewayConnection, OnGatewayDisconnect {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'QueueGateway.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'UsersService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
