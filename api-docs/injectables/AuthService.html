@@ -141,6 +141,10 @@
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
+                                <a href="#findUserByEmail" >findUserByEmail</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
                                 <a href="#getProfile" >getProfile</a>
                             </li>
                             <li>
@@ -157,7 +161,15 @@
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
+                                <a href="#updatePassword" >updatePassword</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
                                 <a href="#updateUserInfo" >updateUserInfo</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#validatePasswordStrength" >validatePasswordStrength</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
@@ -275,8 +287,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="383"
-                                    class="link-to-prism">src/auth/auth.service.ts:383</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="388"
+                                    class="link-to-prism">src/auth/auth.service.ts:388</a></div>
                         </td>
                     </tr>
 
@@ -350,6 +362,75 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="findUserByEmail"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>findUserByEmail</b></span>
+                        <a href="#findUserByEmail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findUserByEmail(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="544"
+                                    class="link-to-prism">src/auth/auth.service.ts:544</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>email</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../entitys/User.html" target="_self" >Promise&lt;User | null&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="getProfile"></a>
                     <span class="name">
                             <span class="modifier">Async</span>
@@ -368,8 +449,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="210"
-                                    class="link-to-prism">src/auth/auth.service.ts:210</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="211"
+                                    class="link-to-prism">src/auth/auth.service.ts:211</a></div>
                         </td>
                     </tr>
 
@@ -437,8 +518,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="205"
-                                    class="link-to-prism">src/auth/auth.service.ts:205</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="206"
+                                    class="link-to-prism">src/auth/auth.service.ts:206</a></div>
                         </td>
                     </tr>
 
@@ -626,6 +707,87 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="updatePassword"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updatePassword</b></span>
+                        <a href="#updatePassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updatePassword(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, newPassword: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="558"
+                                    class="link-to-prism">src/auth/auth.service.ts:558</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>email</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>newPassword</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="updateUserInfo"></a>
                     <span class="name">
                             <span class="modifier">Async</span>
@@ -644,8 +806,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="238"
-                                    class="link-to-prism">src/auth/auth.service.ts:238</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="239"
+                                    class="link-to-prism">src/auth/auth.service.ts:239</a></div>
                         </td>
                     </tr>
 
@@ -694,6 +856,75 @@
                             </div>
                         <div class="io-description">
                             <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validatePasswordStrength"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>validatePasswordStrength</b></span>
+                        <a href="#validatePasswordStrength"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>validatePasswordStrength(password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="589"
+                                    class="link-to-prism">src/auth/auth.service.ts:589</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>password</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>literal type</code>
 
                         </div>
                             <div class="io-description">
@@ -920,8 +1151,9 @@ export class AuthService {
     }
 
     // Validate password strength
-    if (password.length &lt; 6) {
-      throw new BadRequestException(&#x27;Password must be at least 6 characters&#x27;);
+    const passwordValidation &#x3D; this.validatePasswordStrength(password);
+    if (!passwordValidation.isValid) {
+      throw new BadRequestException(passwordValidation.message);
     }
 
     // Hash password
@@ -1056,10 +1288,11 @@ export class AuthService {
       // Handle password change if provided
       if (updateUserDto.password) {
         // Validate password strength
-        if (updateUserDto.password.length &lt; 8) {
-          throw new BadRequestException(
-            &#x27;Password must be at least 8 characters&#x27;,
-          );
+        const passwordValidation &#x3D; this.validatePasswordStrength(
+          updateUserDto.password,
+        );
+        if (!passwordValidation.isValid) {
+          throw new BadRequestException(passwordValidation.message);
         }
 
         // Hash new password
@@ -1106,8 +1339,11 @@ export class AuthService {
       }
 
       try {
-        // Update user with all provided fields
-        await this.usersRepository.update(userId, updateUserDto);
+        // 🔥 CRITICAL FIX: Remove role-related fields before updating User entity
+        const { roleIds, defaultRoleId, ...userUpdateFields } &#x3D; updateUserDto as any;
+        
+        // Update user with only valid User entity fields
+        await this.usersRepository.update(userId, userUpdateFields);
 
         // Get updated user with relations
         const updatedUser &#x3D; await this.usersRepository.findOne({
@@ -1313,6 +1549,104 @@ export class AuthService {
         &#x27;Failed to update user: Unexpected error occurred&#x27;,
       );
     }
+  }
+
+  // Add this method to find user by email
+  async findUserByEmail(email: string): Promise&lt;User | null&gt; {
+    try {
+      const user &#x3D; await this.usersRepository.findOne({
+        where: { email },
+        relations: [&#x27;defaultRole&#x27;],
+      });
+      return user;
+    } catch (error) {
+      console.error(&#x27;Error finding user by email:&#x27;, error);
+      return null;
+    }
+  }
+
+  // Add this method to update password
+  async updatePassword(email: string, newPassword: string): Promise&lt;void&gt; {
+    try {
+      // Validate password strength
+      const passwordValidation &#x3D; this.validatePasswordStrength(newPassword);
+      if (!passwordValidation.isValid) {
+        throw new BadRequestException(passwordValidation.message);
+      }
+
+      // Find user by email
+      const user &#x3D; await this.findUserByEmail(email);
+      if (!user) {
+        throw new BadRequestException(&#x27;User not found&#x27;);
+      }
+
+      // Hash new password
+      const salt &#x3D; await bcrypt.genSalt();
+      const hashedPassword &#x3D; await bcrypt.hash(newPassword, salt);
+
+      // Update password in database
+      await this.usersRepository.update(
+        { id: user.id },
+        { password: hashedPassword },
+      );
+
+      console.log(&#x60;Password updated successfully for user: ${email}&#x60;);
+    } catch (error) {
+      console.error(&#x27;Error updating password:&#x27;, error);
+      throw error;
+    }
+  }
+
+  private validatePasswordStrength(password: string): {
+    isValid: boolean;
+    message?: string;
+  } {
+    if (!password) {
+      return { isValid: false, message: &#x27;Password is required&#x27; };
+    }
+
+    if (password.length &lt; 8) {
+      return {
+        isValid: false,
+        message: &#x27;Password must be at least 8 characters long&#x27;,
+      };
+    }
+
+    const hasUpperCase &#x3D; /[A-Z]/.test(password);
+    const hasLowerCase &#x3D; /[a-z]/.test(password);
+    const hasNumbers &#x3D; /\d/.test(password);
+    const hasSpecialChars &#x3D; /[!@#$%^&amp;*(),.?&quot;:{}|&lt;&gt;]/.test(password);
+
+    if (!hasUpperCase) {
+      return {
+        isValid: false,
+        message: &#x27;Password must contain at least one uppercase letter&#x27;,
+      };
+    }
+
+    if (!hasLowerCase) {
+      return {
+        isValid: false,
+        message: &#x27;Password must contain at least one lowercase letter&#x27;,
+      };
+    }
+
+    if (!hasNumbers) {
+      return {
+        isValid: false,
+        message: &#x27;Password must contain at least one number&#x27;,
+      };
+    }
+
+    if (!hasSpecialChars) {
+      return {
+        isValid: false,
+        message:
+          &#x27;Password must contain at least one special character (!@#$%^&amp;*(),.?&quot;:{}|&lt;&gt;)&#x27;,
+      };
+    }
+
+    return { isValid: true };
   }
 }
 </code></pre>
