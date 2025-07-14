@@ -126,6 +126,27 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#failedAttempts" >failedAttempts</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#logger" >logger</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -141,7 +162,15 @@
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
+                                <a href="#clearAccountLockout" >clearAccountLockout</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
                                 <a href="#findUserByEmail" >findUserByEmail</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getAccountLockout" >getAccountLockout</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
@@ -154,6 +183,10 @@
                             <li>
                                     <span class="modifier">Async</span>
                                 <a href="#login" >login</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#recordFailedLoginAttempt" >recordFailedLoginAttempt</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
@@ -198,7 +231,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/auth/auth.service.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/auth/auth.service.ts:26</a></div>
                             </td>
                         </tr>
 
@@ -287,8 +320,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="388"
-                                    class="link-to-prism">src/auth/auth.service.ts:388</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="456"
+                                    class="link-to-prism">src/auth/auth.service.ts:456</a></div>
                         </td>
                     </tr>
 
@@ -362,6 +395,75 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="clearAccountLockout"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>clearAccountLockout</b></span>
+                        <a href="#clearAccountLockout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>clearAccountLockout(identifier: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="87"
+                                    class="link-to-prism">src/auth/auth.service.ts:87</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>identifier</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="findUserByEmail"></a>
                     <span class="name">
                             <span class="modifier">Async</span>
@@ -380,8 +482,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="544"
-                                    class="link-to-prism">src/auth/auth.service.ts:544</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="612"
+                                    class="link-to-prism">src/auth/auth.service.ts:612</a></div>
                         </td>
                     </tr>
 
@@ -431,6 +533,75 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="getAccountLockout"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getAccountLockout</b></span>
+                        <a href="#getAccountLockout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAccountLockout(identifier: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="52"
+                                    class="link-to-prism">src/auth/auth.service.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>identifier</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="getProfile"></a>
                     <span class="name">
                             <span class="modifier">Async</span>
@@ -449,8 +620,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="211"
-                                    class="link-to-prism">src/auth/auth.service.ts:211</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="278"
+                                    class="link-to-prism">src/auth/auth.service.ts:278</a></div>
                         </td>
                     </tr>
 
@@ -518,8 +689,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="206"
-                                    class="link-to-prism">src/auth/auth.service.ts:206</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="273"
+                                    class="link-to-prism">src/auth/auth.service.ts:273</a></div>
                         </td>
                     </tr>
 
@@ -587,8 +758,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="41"
-                                    class="link-to-prism">src/auth/auth.service.ts:41</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="94"
+                                    class="link-to-prism">src/auth/auth.service.ts:94</a></div>
                         </td>
                     </tr>
 
@@ -638,6 +809,75 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="recordFailedLoginAttempt"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>recordFailedLoginAttempt</b></span>
+                        <a href="#recordFailedLoginAttempt"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>recordFailedLoginAttempt(identifier: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="57"
+                                    class="link-to-prism">src/auth/auth.service.ts:57</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>identifier</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="register"></a>
                     <span class="name">
                             <span class="modifier">Async</span>
@@ -656,8 +896,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="104"
-                                    class="link-to-prism">src/auth/auth.service.ts:104</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="171"
+                                    class="link-to-prism">src/auth/auth.service.ts:171</a></div>
                         </td>
                     </tr>
 
@@ -725,8 +965,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="558"
-                                    class="link-to-prism">src/auth/auth.service.ts:558</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="626"
+                                    class="link-to-prism">src/auth/auth.service.ts:626</a></div>
                         </td>
                     </tr>
 
@@ -806,8 +1046,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="239"
-                                    class="link-to-prism">src/auth/auth.service.ts:239</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="306"
+                                    class="link-to-prism">src/auth/auth.service.ts:306</a></div>
                         </td>
                     </tr>
 
@@ -887,8 +1127,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="589"
-                                    class="link-to-prism">src/auth/auth.service.ts:589</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="657"
+                                    class="link-to-prism">src/auth/auth.service.ts:657</a></div>
                         </td>
                     </tr>
 
@@ -956,8 +1196,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="26"
-                                    class="link-to-prism">src/auth/auth.service.ts:26</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="37"
+                                    class="link-to-prism">src/auth/auth.service.ts:37</a></div>
                         </td>
                     </tr>
 
@@ -1004,6 +1244,66 @@
         </tbody>
     </table>
 </section>
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="failedAttempts"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>failedAttempts</b></span>
+                        <a href="#failedAttempts"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Map&lt;string, LockoutData&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/auth/auth.service.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logger"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>logger</b></span>
+                        <a href="#logger"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Logger(AuthService.name)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/auth/auth.service.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
 
     </div>
 
@@ -1014,6 +1314,7 @@
   UnauthorizedException,
   ConflictException,
   BadRequestException,
+  Logger,
 } from &#x27;@nestjs/common&#x27;;
 import { JwtService } from &#x27;@nestjs/jwt&#x27;;
 import { InjectRepository } from &#x27;@nestjs/typeorm&#x27;;
@@ -1025,14 +1326,24 @@ import { RegisterDto } from &#x27;./dto/register.dto&#x27;;
 import { RolesService } from &#x27;../roles/roles.service&#x27;;
 import { UpdateUserDto, AdminUpdateUserDto } from &#x27;./dto/update-user.dto&#x27;;
 
+interface LockoutData {
+  attempts: number;
+  lastAttempt: Date;
+  lockedUntil?: Date;
+}
+
 @Injectable()
 export class AuthService {
+  private readonly logger &#x3D; new Logger(AuthService.name);
+
   constructor(
     @InjectRepository(User)
     private usersRepository: Repository&lt;User&gt;,
     private jwtService: JwtService,
     private rolesService: RolesService,
   ) {}
+
+  private readonly failedAttempts &#x3D; new Map&lt;string, LockoutData&gt;();
 
   async validateUser(loginDto: LoginDto): Promise&lt;any&gt; {
     const user &#x3D; await this.usersRepository.findOne({
@@ -1049,8 +1360,64 @@ export class AuthService {
     return null;
   }
 
+  async getAccountLockout(identifier: string) {
+    const key &#x3D; identifier.toLowerCase();
+    return this.failedAttempts.get(key) || null;
+  }
+
+  async recordFailedLoginAttempt(identifier: string) {
+    const key &#x3D; identifier.toLowerCase();
+    const current &#x3D; this.failedAttempts.get(key) || {
+      attempts: 0,
+      lastAttempt: new Date(),
+    };
+
+    current.attempts++;
+    current.lastAttempt &#x3D; new Date();
+
+    // Lock account after 5 attempts for 3 minutes (was 15 minutes)
+    if (current.attempts &gt;&#x3D; 5) {
+      current.lockedUntil &#x3D; new Date(Date.now() + 3 * 60 * 1000); // 3 minutes
+      this.logger.warn(
+        &#x60;Account locked for ${identifier} after ${current.attempts} failed attempts&#x60;,
+      );
+    }
+
+    this.failedAttempts.set(key, current);
+
+    return {
+      attempts: current.attempts,
+      isLocked: current.attempts &gt;&#x3D; 5,
+      lockedUntil: current.lockedUntil,
+      timeRemaining: current.lockedUntil
+        ? Math.ceil((current.lockedUntil.getTime() - Date.now()) / 1000)
+        : 0,
+    };
+  }
+
+  async clearAccountLockout(identifier: string) {
+    const key &#x3D; identifier.toLowerCase();
+    this.failedAttempts.delete(key);
+    this.logger.log(&#x60;Account lockout cleared for ${identifier}&#x60;);
+    return { success: true };
+  }
+
   async login(loginDto: LoginDto) {
-    console.log(&#x27;Login attempt with:&#x27;, loginDto);
+    const identifier &#x3D; loginDto.emailOrUsername.toLowerCase();
+
+    // Check if account is locked
+    const lockoutData &#x3D; await this.getAccountLockout(identifier);
+    if (lockoutData?.lockedUntil &amp;&amp; lockoutData.lockedUntil &gt; new Date()) {
+      const timeRemaining &#x3D; Math.ceil(
+        (lockoutData.lockedUntil.getTime() - Date.now()) / 1000,
+      );
+      const minutesRemaining &#x3D; Math.ceil(timeRemaining / 60);
+      throw new UnauthorizedException(
+        &#x60;Account locked due to multiple failed attempts. Try again in ${minutesRemaining} minutes or use &quot;Forgot Password&quot;.&#x60;,
+      );
+    }
+
+    this.logger.log(&#x27;Login attempt with:&#x27;, loginDto);
 
     try {
       const user &#x3D; await this.usersRepository.findOne({
@@ -1061,21 +1428,21 @@ export class AuthService {
         relations: [&#x27;defaultRole&#x27;],
       });
 
-      console.log(&#x27;User found:&#x27;, user ? &#x27;Yes&#x27; : &#x27;No&#x27;);
+      this.logger.log(&#x27;User found:&#x27;, user ? &#x27;Yes&#x27; : &#x27;No&#x27;);
 
       if (!user) {
         throw new UnauthorizedException(&#x27;Invalid email or password&#x27;);
       }
 
       // Debug password check
-      console.log(&#x27;Stored password hash:&#x27;, user.password);
-      console.log(&#x27;Comparing with:&#x27;, loginDto.password);
+      this.logger.log(&#x27;Stored password hash:&#x27;, user.password);
+      this.logger.log(&#x27;Comparing with:&#x27;, loginDto.password);
 
       const isPasswordValid &#x3D; await bcrypt.compare(
         loginDto.password,
         user.password,
       );
-      console.log(&#x27;Password valid:&#x27;, isPasswordValid);
+      this.logger.log(&#x27;Password valid:&#x27;, isPasswordValid);
 
       if (!isPasswordValid) {
         throw new UnauthorizedException(&#x27;Invalid email or password&#x27;);
@@ -1092,7 +1459,7 @@ export class AuthService {
       };
 
       const token &#x3D; this.jwtService.sign(payload);
-      console.log(&#x27;Generated token:&#x27;, token ? &#x27;Success&#x27; : &#x27;Failed&#x27;);
+      this.logger.log(&#x27;Generated token:&#x27;, token ? &#x27;Success&#x27; : &#x27;Failed&#x27;);
 
       // Remove password from response
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -1107,7 +1474,7 @@ export class AuthService {
         },
       };
     } catch (error) {
-      console.error(&#x27;Login error:&#x27;, error);
+      this.logger.error(&#x27;Login error:&#x27;, error);
       throw error;
     }
   }
@@ -1185,7 +1552,7 @@ export class AuthService {
         user.defaultRoleId &#x3D; citizenRole.id;
         await this.usersRepository.save(user);
       } catch (error) {
-        console.error(&#x27;Error assigning citizen role:&#x27;, error);
+        this.logger.error(&#x27;Error assigning citizen role:&#x27;, error);
         // Rollback: Delete the user to maintain a consistent state
         await this.usersRepository.delete(user.id);
         throw new ConflictException(
@@ -1209,7 +1576,7 @@ export class AuthService {
         },
       };
     } catch (error) {
-      console.error(&#x27;Registration error:&#x27;, error);
+      this.logger.error(&#x27;Registration error:&#x27;, error);
       throw error;
     }
   }
@@ -1340,8 +1707,9 @@ export class AuthService {
 
       try {
         // 🔥 CRITICAL FIX: Remove role-related fields before updating User entity
-        const { roleIds, defaultRoleId, ...userUpdateFields } &#x3D; updateUserDto as any;
-        
+        const { roleIds, defaultRoleId, ...userUpdateFields } &#x3D;
+          updateUserDto as any;
+
         // Update user with only valid User entity fields
         await this.usersRepository.update(userId, userUpdateFields);
 
@@ -1369,7 +1737,7 @@ export class AuthService {
           defaultRole: updatedUser.defaultRole?.name || &#x27;citizen&#x27;,
         };
       } catch (error: unknown) {
-        console.error(&#x27;User update database error:&#x27;, error);
+        this.logger.error(&#x27;User update database error:&#x27;, error);
         if (
           typeof error &#x3D;&#x3D;&#x3D; &#x27;object&#x27; &amp;&amp;
           error !&#x3D;&#x3D; null &amp;&amp;
@@ -1383,7 +1751,7 @@ export class AuthService {
         );
       }
     } catch (error) {
-      console.error(&#x27;User update error:&#x27;, error);
+      this.logger.error(&#x27;User update error:&#x27;, error);
       // Re-throw specific errors
       if (
         error instanceof UnauthorizedException ||
@@ -1401,7 +1769,7 @@ export class AuthService {
     targetUserId: number,
     updateUserDto: AdminUpdateUserDto,
   ) {
-    console.log(
+    this.logger.log(
       &#x60;Admin ${adminId} attempting to update user ${targetUserId}&#x60;,
       updateUserDto,
     );
@@ -1443,7 +1811,7 @@ export class AuthService {
       try {
         await this.updateUserInfo(targetUserId, updateUserDto);
       } catch (err) {
-        console.error(&#x27;Error during basic user update:&#x27;, err);
+        this.logger.error(&#x27;Error during basic user update:&#x27;, err);
         throw err; // Re-throw to be caught by outer try-catch
       }
 
@@ -1465,11 +1833,11 @@ export class AuthService {
             targetUserId,
             updateUserDto.roleIds,
           );
-          console.log(
+          this.logger.log(
             &#x60;Assigned roles ${updateUserDto.roleIds.join(&#x27;, &#x27;)} to user ${targetUserId}&#x60;,
           );
         } catch (error) {
-          console.error(&#x27;Error assigning roles:&#x27;, error);
+          this.logger.error(&#x27;Error assigning roles:&#x27;, error);
           throw new BadRequestException(
             error instanceof Error ? error.message : &#x27;Failed to assign roles&#x27;,
           );
@@ -1509,11 +1877,11 @@ export class AuthService {
           await this.usersRepository.update(targetUserId, {
             defaultRoleId: updateUserDto.defaultRoleId,
           });
-          console.log(
+          this.logger.log(
             &#x60;Updated default role to ${updateUserDto.defaultRoleId} for user ${targetUserId}&#x60;,
           );
         } catch (error) {
-          console.error(&#x27;Error updating default role:&#x27;, error);
+          this.logger.error(&#x27;Error updating default role:&#x27;, error);
           throw new BadRequestException(
             error instanceof Error
               ? error.message
@@ -1527,13 +1895,13 @@ export class AuthService {
         const updatedUser &#x3D; await this.getProfile(targetUserId);
         return updatedUser;
       } catch (error) {
-        console.error(&#x27;Error retrieving updated user profile:&#x27;, error);
+        this.logger.error(&#x27;Error retrieving updated user profile:&#x27;, error);
         throw new BadRequestException(
           &#x27;User was updated but profile could not be retrieved&#x27;,
         );
       }
     } catch (error) {
-      console.error(&#x27;Admin update user error:&#x27;, error);
+      this.logger.error(&#x27;Admin update user error:&#x27;, error);
 
       // Re-throw specific exceptions
       if (
@@ -1560,7 +1928,7 @@ export class AuthService {
       });
       return user;
     } catch (error) {
-      console.error(&#x27;Error finding user by email:&#x27;, error);
+      this.logger.error(&#x27;Error finding user by email:&#x27;, error);
       return null;
     }
   }
@@ -1590,9 +1958,9 @@ export class AuthService {
         { password: hashedPassword },
       );
 
-      console.log(&#x60;Password updated successfully for user: ${email}&#x60;);
+      this.logger.log(&#x60;Password updated successfully for user: ${email}&#x60;);
     } catch (error) {
-      console.error(&#x27;Error updating password:&#x27;, error);
+      this.logger.error(&#x27;Error updating password:&#x27;, error);
       throw error;
     }
   }

@@ -211,6 +211,7 @@
   UnauthorizedException,
   Param,
   BadRequestException,
+  Logger,
 } from &#x27;@nestjs/common&#x27;;
 import { AuthService } from &#x27;./auth.service&#x27;;
 import { LoginDto } from &#x27;./dto/login.dto&#x27;;
@@ -251,6 +252,8 @@ interface RequestWithUser extends Request {
 @ApiTags(&#x27;Authentication &amp; OTP&#x27;)
 @Controller(&#x27;auth&#x27;)
 export class AuthController {
+  private readonly logger &#x3D; new Logger(AuthController.name);
+
   constructor(
     private authService: AuthService,
     private otpService: OTPService,
@@ -284,7 +287,7 @@ export class AuthController {
   @ApiBody({ type: LoginDto })
   @Post(&#x27;login&#x27;)
   async login(@Body() loginDto: LoginDto) {
-    console.log(&#x27;Login request received:&#x27;, loginDto);
+    this.logger.log(&#x27;Login request received:&#x27;, loginDto);
     try {
       const result &#x3D; await this.authService.login(loginDto);
       return result;
@@ -351,7 +354,7 @@ export class AuthController {
 
       return result;
     } catch (error) {
-      console.error(&#x27;Registration error:&#x27;, error);
+      this.logger.error(&#x27;Registration error:&#x27;, error);
       throw error;
     }
   }
@@ -439,14 +442,14 @@ export class AuthController {
     @Body() updateUserDto: AdminUpdateUserDto,
   ) {
     // Add logging to see what&#x27;s happening
-    console.log(&#x27;🔍 Admin update request received:&#x27;);
-    console.log(&#x27;Admin ID:&#x27;, req.user?.id);
-    console.log(&#x27;Admin roles:&#x27;, req.user?.roles);
-    console.log(&#x27;Target User ID:&#x27;, targetUserId);
-    console.log(&#x27;Update data:&#x27;, updateUserDto);
+    this.logger.log(&#x27;🔍 Admin update request received:&#x27;);
+    this.logger.log(&#x27;Admin ID:&#x27;, req.user?.id);
+    this.logger.log(&#x27;Admin roles:&#x27;, req.user?.roles);
+    this.logger.log(&#x27;Target User ID:&#x27;, targetUserId);
+    this.logger.log(&#x27;Update data:&#x27;, updateUserDto);
 
     if (!req.user || req.user.id &#x3D;&#x3D;&#x3D; undefined || req.user.id &#x3D;&#x3D;&#x3D; null) {
-      console.error(&#x27;❌ No user in request object&#x27;);
+      this.logger.error(&#x27;❌ No user in request object&#x27;);
       throw new UnauthorizedException(&#x27;Invalid admin ID&#x27;);
     }
 
@@ -457,7 +460,7 @@ export class AuthController {
         updateUserDto,
       );
     } catch (error) {
-      console.error(&#x27;❌ Admin update error:&#x27;, error);
+      this.logger.error(&#x27;❌ Admin update error:&#x27;, error);
       throw new UnauthorizedException(
         error instanceof Error ? error.message : &#x27;Failed to update user&#x27;,
       );
@@ -548,7 +551,7 @@ export class AuthController {
         email: email,
       };
     } catch (error) {
-      console.error(&#x27;Error sending OTP:&#x27;, error);
+      this.logger.error(&#x27;Error sending OTP:&#x27;, error);
       throw new BadRequestException(&#x27;Failed to send OTP&#x27;);
     }
   }
@@ -639,7 +642,7 @@ export class AuthController {
         message: &#x27;OTP verified successfully&#x27;,
       };
     } catch (error) {
-      console.error(&#x27;Error verifying OTP:&#x27;, error);
+      this.logger.error(&#x27;Error verifying OTP:&#x27;, error);
       throw new UnauthorizedException(&#x27;Invalid or expired OTP&#x27;);
     }
   }
@@ -715,7 +718,7 @@ export class AuthController {
         message: &#x27;Password reset code sent to your email&#x27;,
       };
     } catch (error) {
-      console.error(&#x27;Forgot password error:&#x27;, error);
+      this.logger.error(&#x27;Forgot password error:&#x27;, error);
       throw new BadRequestException(&#x27;Failed to send password reset code&#x27;);
     }
   }
@@ -821,7 +824,7 @@ export class AuthController {
         message: &#x27;Password reset successfully&#x27;,
       };
     } catch (error) {
-      console.error(&#x27;Reset password error:&#x27;, error);
+      this.logger.error(&#x27;Reset password error:&#x27;, error);
       throw error;
     }
   }
@@ -908,7 +911,7 @@ export class AuthController {
         otp: process.env.NODE_ENV &#x3D;&#x3D;&#x3D; &#x27;development&#x27; ? otp : undefined,
       };
     } catch (error) {
-      console.error(&#x27;Test OTP error:&#x27;, error);
+      this.logger.error(&#x27;Test OTP error:&#x27;, error);
       throw new BadRequestException(&#x27;Failed to generate OTP&#x27;);
     }
   }
@@ -1001,7 +1004,7 @@ export class AuthController {
         message: &#x27;Application notification sent successfully&#x27;,
       };
     } catch (error) {
-      console.error(&#x27;Error sending application notification:&#x27;, error);
+      this.logger.error(&#x27;Error sending application notification:&#x27;, error);
       throw new BadRequestException(&#x27;Failed to send application notification&#x27;);
     }
   }
@@ -1013,14 +1016,24 @@ export class AuthController {
   @Post(&#x27;send-queue-notification&#x27;)
   async sendQueueNotification(@Body() notificationDto: QueueNotificationDto) {
     try {
-      const { email, queueNumber, type, position, estimatedTime, status, message } &#x3D; notificationDto;
+      const {
+        email,
+        queueNumber,
+        type,
+        position,
+        estimatedTime,
+        status,
+        message,
+      } &#x3D; notificationDto;
 
       if (type &#x3D;&#x3D;&#x3D; &#x27;position_alert&#x27;) {
         // Fix: Ensure position is defined for position alerts
         if (position &#x3D;&#x3D;&#x3D; undefined) {
-          throw new BadRequestException(&#x27;Position is required for position alerts&#x27;);
+          throw new BadRequestException(
+            &#x27;Position is required for position alerts&#x27;,
+          );
         }
-        
+
         await this.emailService.sendQueuePositionAlert(
           email,
           queueNumber,
@@ -1042,7 +1055,7 @@ export class AuthController {
       };
     } catch (error) {
       // Don&#x27;t throw error to avoid breaking queue functionality
-      console.error(&#x27;Queue notification error:&#x27;, error);
+      this.logger.error(&#x27;Queue notification error:&#x27;, error);
       return {
         success: false,
         message: &#x27;Failed to send notification, but queue operation continues&#x27;,
@@ -1092,15 +1105,15 @@ export class AuthController {
     },
   })
   @Post(&#x27;notifications/appointment-confirmation&#x27;)
-  async sendAppointmentConfirmation(
-    @Body() notificationDto: any,
-  ) {
+  async sendAppointmentConfirmation(@Body() notificationDto: any) {
     try {
       const { email, appointmentNumber, appointmentDetails } &#x3D; notificationDto;
 
       // Validate required fields
       if (!email || !appointmentNumber || !appointmentDetails) {
-        throw new BadRequestException(&#x27;Missing required fields: email, appointmentNumber, or appointmentDetails&#x27;);
+        throw new BadRequestException(
+          &#x27;Missing required fields: email, appointmentNumber, or appointmentDetails&#x27;,
+        );
       }
 
       await this.emailService.sendAppointmentConfirmation(
@@ -1114,7 +1127,7 @@ export class AuthController {
         message: &#x27;Appointment confirmation sent successfully&#x27;,
       };
     } catch (error) {
-      console.error(&#x27;Error sending appointment confirmation:&#x27;, error);
+      this.logger.error(&#x27;Error sending appointment confirmation:&#x27;, error);
       throw new BadRequestException(&#x27;Failed to send appointment confirmation&#x27;);
     }
   }
@@ -1158,15 +1171,16 @@ export class AuthController {
     },
   })
   @Post(&#x27;notifications/appointment-status-update&#x27;)
-  async sendAppointmentStatusUpdate(
-    @Body() notificationDto: any,
-  ) {
+  async sendAppointmentStatusUpdate(@Body() notificationDto: any) {
     try {
-      const { email, appointmentNumber, status, appointmentDetails } &#x3D; notificationDto;
+      const { email, appointmentNumber, status, appointmentDetails } &#x3D;
+        notificationDto;
 
       // Validate required fields
       if (!email || !appointmentNumber || !status || !appointmentDetails) {
-        throw new BadRequestException(&#x27;Missing required fields: email, appointmentNumber, status, or appointmentDetails&#x27;);
+        throw new BadRequestException(
+          &#x27;Missing required fields: email, appointmentNumber, status, or appointmentDetails&#x27;,
+        );
       }
 
       await this.emailService.sendAppointmentStatusUpdate(
@@ -1181,7 +1195,7 @@ export class AuthController {
         message: &#x27;Appointment status update sent successfully&#x27;,
       };
     } catch (error) {
-      console.error(&#x27;Error sending appointment status update:&#x27;, error);
+      this.logger.error(&#x27;Error sending appointment status update:&#x27;, error);
       throw new BadRequestException(&#x27;Failed to send appointment status update&#x27;);
     }
   }
@@ -1225,15 +1239,16 @@ export class AuthController {
     },
   })
   @Post(&#x27;notifications/appointment-cancellation&#x27;)
-  async sendAppointmentCancellation(
-    @Body() notificationDto: any,
-  ) {
+  async sendAppointmentCancellation(@Body() notificationDto: any) {
     try {
-      const { email, appointmentNumber, appointmentDetails, reason } &#x3D; notificationDto;
+      const { email, appointmentNumber, appointmentDetails, reason } &#x3D;
+        notificationDto;
 
       // Validate required fields
       if (!email || !appointmentNumber || !appointmentDetails) {
-        throw new BadRequestException(&#x27;Missing required fields: email, appointmentNumber, or appointmentDetails&#x27;);
+        throw new BadRequestException(
+          &#x27;Missing required fields: email, appointmentNumber, or appointmentDetails&#x27;,
+        );
       }
 
       await this.emailService.sendAppointmentCancellation(
@@ -1248,7 +1263,7 @@ export class AuthController {
         message: &#x27;Appointment cancellation sent successfully&#x27;,
       };
     } catch (error) {
-      console.error(&#x27;Error sending appointment cancellation:&#x27;, error);
+      this.logger.error(&#x27;Error sending appointment cancellation:&#x27;, error);
       throw new BadRequestException(&#x27;Failed to send appointment cancellation&#x27;);
     }
   }
@@ -1276,8 +1291,235 @@ export class AuthController {
         message: &#x27;Appointment reminder sent successfully&#x27;,
       };
     } catch (error) {
-      console.error(&#x27;Error sending appointment reminder:&#x27;, error);
+      this.logger.error(&#x27;Error sending appointment reminder:&#x27;, error);
       throw new BadRequestException(&#x27;Failed to send appointment reminder&#x27;);
+    }
+  }
+
+  @Post(&#x27;notifications/application-confirmation&#x27;)
+  @ApiOperation({ summary: &#x27;Send application confirmation notification&#x27; })
+  async sendApplicationConfirmation(
+    @Body()
+    dto: {
+      email: string;
+      applicationId: string;
+      applicationType: string;
+      applicationSubtype?: string;
+      applicantName: string;
+      submissionDate: string;
+      status: string;
+    },
+  ) {
+    try {
+      this.logger.log(
+        &#x60;Sending application confirmation notification to: ${dto.email}&#x60;,
+      );
+
+      // Use your existing email service to send application confirmation
+      await this.emailService.sendDocumentApplicationConfirmation(
+        dto.email,
+        dto.applicationId,
+        dto.applicationType,
+        dto.applicationSubtype,
+        dto.applicantName,
+        dto.submissionDate,
+        dto.status,
+      );
+
+      return {
+        success: true,
+        message: &#x27;Application confirmation notification sent successfully&#x27;,
+      };
+    } catch (error) {
+      this.logger.error(
+        &#x27;Error sending application confirmation notification:&#x27;,
+        error,
+      );
+      throw new BadRequestException(
+        &#x27;Failed to send application confirmation notification&#x27;,
+      );
+    }
+  }
+
+  @Post(&#x27;notifications/application-status-update&#x27;)
+  @ApiOperation({ summary: &#x27;Send application status update notification&#x27; })
+  async sendApplicationStatusUpdate(
+    @Body()
+    dto: {
+      email: string;
+      applicationId: string;
+      newStatus: string;
+      applicationType: string;
+      applicationSubtype?: string;
+      applicantName: string;
+      previousStatus?: string;
+    },
+  ) {
+    try {
+      this.logger.log(
+        &#x60;Sending application status update notification to: ${dto.email}&#x60;,
+      );
+
+      // Use your existing email service
+      await this.emailService.sendDocumentApplicationStatusUpdate(
+        dto.email,
+        dto.applicationId,
+        dto.newStatus,
+        dto.applicationType,
+        dto.applicationSubtype,
+        dto.applicantName,
+        dto.previousStatus,
+      );
+
+      return {
+        success: true,
+        message: &#x27;Application status update notification sent successfully&#x27;,
+      };
+    } catch (error) {
+      this.logger.error(
+        &#x27;Error sending application status update notification:&#x27;,
+        error,
+      );
+      throw new BadRequestException(
+        &#x27;Failed to send application status update notification&#x27;,
+      );
+    }
+  }
+
+  @Post(&#x27;notifications/application-approval&#x27;)
+  @ApiOperation({ summary: &#x27;Send application approval notification&#x27; })
+  async sendApplicationApproval(
+    @Body()
+    dto: {
+      email: string;
+      applicationId: string;
+      applicationType: string;
+      applicationSubtype?: string;
+      applicantName: string;
+    },
+  ) {
+    try {
+      this.logger.log(
+        &#x60;Sending application approval notification to: ${dto.email}&#x60;,
+      );
+
+      // Use your existing email service
+      await this.emailService.sendDocumentApplicationApproval(
+        dto.email,
+        dto.applicationId,
+        dto.applicationType,
+        dto.applicationSubtype,
+        dto.applicantName,
+      );
+
+      return {
+        success: true,
+        message: &#x27;Application approval notification sent successfully&#x27;,
+      };
+    } catch (error) {
+      this.logger.error(
+        &#x27;Error sending application approval notification:&#x27;,
+        error,
+      );
+      throw new BadRequestException(
+        &#x27;Failed to send application approval notification&#x27;,
+      );
+    }
+  }
+
+  @Post(&#x27;notifications/application-rejection&#x27;)
+  @ApiOperation({ summary: &#x27;Send application rejection notification&#x27; })
+  async sendApplicationRejection(
+    @Body()
+    dto: {
+      email: string;
+      applicationId: string;
+      applicationType: string;
+      applicationSubtype?: string;
+      applicantName: string;
+      rejectionReason: string;
+    },
+  ) {
+    try {
+      this.logger.log(
+        &#x60;Sending application rejection notification to: ${dto.email}&#x60;,
+      );
+
+      // Use your existing email service
+      await this.emailService.sendDocumentApplicationRejection(
+        dto.email,
+        dto.applicationId,
+        dto.applicationType,
+        dto.applicationSubtype,
+        dto.applicantName,
+        dto.rejectionReason,
+      );
+
+      return {
+        success: true,
+        message: &#x27;Application rejection notification sent successfully&#x27;,
+      };
+    } catch (error) {
+      this.logger.error(
+        &#x27;Error sending application rejection notification:&#x27;,
+        error,
+      );
+      throw new BadRequestException(
+        &#x27;Failed to send application rejection notification&#x27;,
+      );
+    }
+  }
+
+  @Post(&#x27;check-lockout&#x27;)
+  @ApiOperation({ summary: &#x27;Check if account is locked&#x27; })
+  async checkAccountLockout(@Body() { identifier }: { identifier: string }) {
+    try {
+      const lockoutData &#x3D; await this.authService.getAccountLockout(identifier);
+
+      if (lockoutData?.lockedUntil &amp;&amp; lockoutData.lockedUntil &gt; new Date()) {
+        const timeRemaining &#x3D; Math.ceil(
+          (lockoutData.lockedUntil.getTime() - Date.now()) / 1000,
+        );
+        return {
+          isLocked: true,
+          timeRemaining,
+          attemptsUsed: lockoutData.attempts,
+          lockedUntil: lockoutData.lockedUntil,
+        };
+      }
+
+      return {
+        isLocked: false,
+        attempts: lockoutData?.attempts || 0,
+      };
+    } catch (error) {
+      this.logger.error(&#x27;Error checking account lockout:&#x27;, error);
+      return {
+        isLocked: false,
+        attempts: 0,
+      };
+    }
+  }
+
+  @Post(&#x27;record-failed-attempt&#x27;)
+  @ApiOperation({ summary: &#x27;Record failed login attempt&#x27; })
+  async recordFailedAttempt(@Body() { identifier }: { identifier: string }) {
+    try {
+      return await this.authService.recordFailedLoginAttempt(identifier);
+    } catch (error) {
+      this.logger.error(&#x27;Error recording failed attempt:&#x27;, error);
+      throw new BadRequestException(&#x27;Failed to record login attempt&#x27;);
+    }
+  }
+
+  @Post(&#x27;clear-lockout&#x27;)
+  @ApiOperation({ summary: &#x27;Clear account lockout on successful login&#x27; })
+  async clearAccountLockout(@Body() { identifier }: { identifier: string }) {
+    try {
+      return await this.authService.clearAccountLockout(identifier);
+    } catch (error) {
+      this.logger.error(&#x27;Error clearing account lockout:&#x27;, error);
+      throw new BadRequestException(&#x27;Failed to clear account lockout&#x27;);
     }
   }
 }
